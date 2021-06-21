@@ -1,7 +1,7 @@
 <?php
 
 ini_set('memory_limit', '-1');
-date_default_timezone_set('America/Los_Angeles');
+date_default_timezone_set('Asia/Calcutta');
 
 // This script will be run by a cronjob every two minutes, regenerating countdown files whose end dates are in the future.
 
@@ -19,7 +19,7 @@ $dirs = array_filter(glob('*'), 'is_dir');
 $base_dir = '[YOUR_BASE_URL]/cd/';
 
 // set the timezone
-date_default_timezone_set('America/Los_Angeles');
+date_default_timezone_set('Asia/Calcutta');
 
 // get the current time
 $now  = new DateTime('now');

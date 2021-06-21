@@ -8,7 +8,7 @@ ini_set('memory_limit', '512M');
 ini_set('max_execution_time', 3);
 
 // timezone
-date_default_timezone_set('America/Los_Angeles');
+date_default_timezone_set('Asia/Calcutta');
 
 
 // require directory check to make sure all the files exist and that permissions are correct

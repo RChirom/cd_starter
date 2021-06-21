@@ -41,7 +41,7 @@ To customize your font, do the following:
 3) Open the `generate_cd.php` file of the countdown whose font you wish to change and find the following lines (line 95):
 ```
 // fonts
-$space_mono = "../../assets/fonts/SpaceMono-Bold.ttf";
+$muli = "../../assets/fonts/SpaceMono-Bold.ttf";
 ```
 4) Replace `SpaceMono-Bold.ttf` with the name of the font you added in step (2) above.
 

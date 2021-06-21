@@ -11,7 +11,7 @@ ini_set('max_execution_time', 1);
 $results_string = '';
 
 // timezone
-date_default_timezone_set('America/Los_Angeles');
+date_default_timezone_set('Asia/Calcutta');
 
 // times
 $now  = new DateTime('now');
@@ -92,8 +92,8 @@ $im = imagecreatetruecolor(500, 150);
 $text_color = imagecolorallocate($im, $text_r, $text_g, $text_b);
 
 // fonts
-$space_mono = "../../assets/fonts/SpaceMono-Bold.ttf";
-
+$muli = dirname(__FILE__) . '/Muli.ttf';
+//$muli = dirname(__FILE__) . '../../assets/fonts/SpaceMono-Bold.ttf';
 // create arrays for frames for both images because we want both generated at the same time
 $dt_frames = array();
 $mb_frames = array();
@@ -146,13 +146,13 @@ for ($i=0; $i <= $num_frames; $i++) {
 	// days should be a single digit, so need to calcluate X position
 	// imagettftext(image, size, angle, x, y, color, fontfile, text)
 	if (strlen($days) <= 1) {
-		imagettftext($tempImg, $font_size_dt, 0, $coordinates->desktop->days_1digit[0], $coordinates->desktop->days_1digit[1], $text_color, $space_mono, $days);
+		imagettftext($tempImg, $font_size_dt, 0, $coordinates->desktop->days_1digit[0], $coordinates->desktop->days_1digit[1], $text_color, $muli, $days);
 	} else {
-		imagettftext($tempImg, $font_size_dt, 0, $coordinates->desktop->days_2digit[0], $coordinates->desktop->days_2digit[1], $text_color, $space_mono, $days);
+		imagettftext($tempImg, $font_size_dt, 0, $coordinates->desktop->days_2digit[0], $coordinates->desktop->days_2digit[1], $text_color, $muli, $days);
 	}
-	imagettftext($tempImg, $font_size_dt, 0, $coordinates->desktop->hours[0], $coordinates->desktop->hours[1], $text_color, $space_mono, $hours);
-	imagettftext($tempImg, $font_size_dt, 0, $coordinates->desktop->minutes[0], $coordinates->desktop->minutes[1], $text_color, $space_mono, $mins);
-	imagettftext($tempImg, $font_size_dt, 0, $coordinates->desktop->seconds[0], $coordinates->desktop->seconds[1], $text_color, $space_mono, $secs);
+	imagettftext($tempImg, $font_size_dt, 0, $coordinates->desktop->hours[0], $coordinates->desktop->hours[1], $text_color, $muli, $hours);
+	imagettftext($tempImg, $font_size_dt, 0, $coordinates->desktop->minutes[0], $coordinates->desktop->minutes[1], $text_color, $muli, $mins);
+	imagettftext($tempImg, $font_size_dt, 0, $coordinates->desktop->seconds[0], $coordinates->desktop->seconds[1], $text_color, $muli, $secs);
 
 	$dt_frames[] = $tempImg;
 }
@@ -204,13 +204,13 @@ for ($i=0; $i <= $num_frames; $i++) {
 
 	// place each of our text items where they need to be depending on if it's days/hours or mins/secs
 	if (strlen($days) <= 1) {
-        imagettftext($tempImg, $font_size_mb, 0, $coordinates->mobile->days_1digit[0], $coordinates->mobile->days_1digit[1], $text_color, $space_mono, $days);
+        imagettftext($tempImg, $font_size_mb, 0, $coordinates->mobile->days_1digit[0], $coordinates->mobile->days_1digit[1], $text_color, $muli, $days);
     } else {
-        imagettftext($tempImg, $font_size_mb, 0, $coordinates->mobile->days_2digit[0], $coordinates->mobile->days_2digit[1], $text_color, $space_mono, $days);
+        imagettftext($tempImg, $font_size_mb, 0, $coordinates->mobile->days_2digit[0], $coordinates->mobile->days_2digit[1], $text_color, $muli, $days);
     }
-    imagettftext($tempImg, $font_size_mb, 0, $coordinates->mobile->hours[0], $coordinates->mobile->hours[1], $text_color, $space_mono, $hours);
-    imagettftext($tempImg, $font_size_mb, 0, $coordinates->mobile->minutes[0], $coordinates->mobile->minutes[1], $text_color, $space_mono, $mins);
-    imagettftext($tempImg, $font_size_mb, 0, $coordinates->mobile->seconds[0], $coordinates->mobile->seconds[1], $text_color, $space_mono, $secs);
+    imagettftext($tempImg, $font_size_mb, 0, $coordinates->mobile->hours[0], $coordinates->mobile->hours[1], $text_color, $muli, $hours);
+    imagettftext($tempImg, $font_size_mb, 0, $coordinates->mobile->minutes[0], $coordinates->mobile->minutes[1], $text_color, $muli, $mins);
+    imagettftext($tempImg, $font_size_mb, 0, $coordinates->mobile->seconds[0], $coordinates->mobile->seconds[1], $text_color, $muli, $secs);
 
     $mb_frames[] = $tempImg;
 }
